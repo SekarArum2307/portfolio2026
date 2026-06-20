@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sekar Arum Kusuma Dewi — Portofolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-dark: #0A1628;
+    --navy-mid: #1E3A5F;
+    --blue-accent: #2E86AB;
+    --gold: #C9A84C;
+    --off-white: #F0F4F8;
+    --white: #FFFFFF;
+    --gray-text: #6B7A8D;
+    --border: #D1DCE8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--navy-dark);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid rgba(46, 134, 171, 0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--blue-accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy-dark);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 3rem;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(46, 134, 171, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46, 134, 171, 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(46, 134, 171, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 5rem;
+  }
+
+  .hero-coords {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--blue-accent);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .hero-coords::before {
+    content: '◎ ';
+    color: var(--gold);
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-name em {
+    font-style: normal;
+    color: var(--blue-accent);
+  }
+
+  .hero-title {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    font-weight: 400;
+  }
+
+  .hero-desc {
+    max-width: 560px;
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--blue-accent);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: #2574A0; }
+
+  .btn-outline {
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    padding: 0.8rem 2rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 2px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--blue-accent);
+    color: var(--blue-accent);
+  }
+
+  .hero-stats {
+    position: absolute;
+    right: 3rem;
+    bottom: 3rem;
+    display: flex;
+    gap: 3rem;
+    z-index: 2;
+  }
+
+  .stat {
+    text-align: right;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .stat-num span { color: var(--gold); }
+
+  .stat-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 3rem;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-accent);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--navy-dark);
+    margin-bottom: 3rem;
+    line-height: 1.2;
+  }
+
+  /* ABOUT */
+  #tentang {
+    background: var(--off-white);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: #3D4F63;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .skill-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.4rem;
+    border-radius: 2px;
+    border-left: 3px solid var(--blue-accent);
+  }
+
+  .skill-card-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-accent);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+
+  .skill-card p {
+    font-size: 0.82rem;
+    color: var(--gray-text);
+    line-height: 1.6;
+  }
+
+  /* PENGALAMAN */
+  #pengalaman {
+    background: var(--white);
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .timeline-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -2.35rem;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--blue-accent);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 2px var(--blue-accent);
+  }
+
+  .timeline-dot.gold {
+    background: var(--gold);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+
+  .timeline-period {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--blue-accent);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--navy-dark);
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-org {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .timeline-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .timeline-list li {
+    font-size: 0.88rem;
+    color: #4A5D70;
+    padding: 0.3rem 0 0.3rem 1.2rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .timeline-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--blue-accent);
+    font-weight: 300;
+  }
+
+  /* PORTOFOLIO */
+  #portofolio {
+    background: var(--navy-dark);
+  }
+
+  #portofolio .section-title {
+    color: var(--white);
+  }
+
+  #portofolio .section-eyebrow {
+    color: var(--gold);
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .portfolio-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(46, 134, 171, 0.15);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .portfolio-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(46, 134, 171, 0.5);
+  }
+
+  .portfolio-card-header {
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .portfolio-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue-accent);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+
+  .portfolio-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  .portfolio-card-body {
+    padding: 1rem 1.5rem 1.5rem;
+  }
+
+  .portfolio-card-body p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tool-tag {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.5);
+    background: rgba(46, 134, 171, 0.1);
+    border: 1px solid rgba(46, 134, 171, 0.2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+
+
+  .portfolio-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(46,134,171,0.15);
+  }
+
+  .portfolio-card-img-placeholder {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, #1a2f4a 0%, #2E86AB22 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(46,134,171,0.15);
+  }
+
+  .portfolio-card-img-placeholder span {
+    font-size: 1.8rem;
+  }
+
+  .portfolio-card-img-placeholder p {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .portfolio-card-footer {
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .portfolio-link {
+    font-size: 0.72rem;
+    color: var(--blue-accent);
+    text-decoration: none;
+    border: 1px solid rgba(46, 134, 171, 0.35);
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .portfolio-link:hover {
+    background: rgba(46, 134, 171, 0.15);
+    color: #fff;
+  }
+
+  .portfolio-link.placeholder {
+    color: rgba(255,255,255,0.25);
+    border-color: rgba(255,255,255,0.1);
+    cursor: default;
+    font-style: italic;
+  }
+
+  .portfolio-link.placeholder:hover {
+    background: transparent;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* KONTAK */
+  #kontak {
+    background: var(--off-white);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    color: #3D4F63;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    padding: 1rem 1.2rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: border-color 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--blue-accent);
+  }
+
+  .contact-link-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--navy-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-accent);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .contact-link-text {
+    font-size: 0.85rem;
+    color: var(--navy-dark);
+    font-weight: 500;
+  }
+
+  .contact-link-sub {
+    font-size: 0.75rem;
+    color: var(--gray-text);
+  }
+
+  /* SERTIFIKASI */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .cert-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.2rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+  }
+
+  .cert-year {
+    font-size: 0.7rem;
+    color: var(--blue-accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding-top: 2px;
+    min-width: 36px;
+  }
+
+  .cert-name {
+    font-size: 0.85rem;
+    color: var(--navy-dark);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .cert-issuer {
+    font-size: 0.75rem;
+    color: var(--gray-text);
+    margin-top: 0.2rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-dark);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(46, 134, 171, 0.15);
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 0.9rem;
+  }
+
+  .footer-coords {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 0 1.5rem; }
+    .hero-stats { display: none; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .cert-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+
+  /* SCROLL REVEAL (basic) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Sekar <span>A.K.D.</span></div>
+  <ul class="nav-links">
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#pengalaman">Pengalaman</a></li>
+    <li><a href="#portofolio">Portofolio</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-coords">7°47'S, 110°22'E — Yogyakarta, Indonesia</div>
+    <h1 class="hero-name">
+      Sekar Arum<br><em>Kusuma Dewi</em>
+    </h1>
+    <p class="hero-title">Geospatial Professional &nbsp;·&nbsp; Digital Media Strategist</p>
+    <p class="hero-desc">
+      Sarjana Teknik Geodesi dengan pengalaman langsung dalam pemrosesan data geospasial, analisis spasial, dan strategi media digital. Berpengalaman di bidang pemantauan lingkungan, platform data bencana, dan pengembangan konten geospasial.
+    </p>
+    <div class="hero-cta">
+      <a href="#portofolio" class="btn-primary">Lihat Portofolio</a>
+      <a href="#kontak" class="btn-outline">Hubungi Saya</a>
+    </div>
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-eyebrow">Profil</div>
+        <h2 class="section-title">Tentang Saya</h2>
+        <p>
+          Saya adalah seorang <strong> profesional geospasial </strong>yang juga aktif di bidang strategi media digital. Latar belakang saya di Teknik Geodesi Universitas Diponegoro memberi saya fondasi kuat dalam <strong>pemrosesan data spasial, remote sensing, dan analisis lingkungan.</strong>
+        </p>
+        <p>
+          Di luar pekerjaan teknis, saya memimpin tim media di CV Geoaccess Indonesia — mengelola konten, strategi digital, dan administrasi website untuk perusahaan geospasial dengan lebih dari 49.000 pengikut Instagram.
+        </p>
+        <p>
+          Saya percaya bahwa data geospasial hanya bermakna jika bisa dikomunikasikan dengan baik. Itulah yang mendorong saya untuk terus mengembangkan kemampuan di dua bidang sekaligus.
+        </p>
+      </div>
+      <div class="reveal">
+        <div class="section-eyebrow" style="margin-top:4.3rem;">Keahlian</div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-card-title">Geospasial & Remote Sensing</div>
+            <p>QGIS · ArcGIS · Google Earth Engine · InVEST · Analisis spasial · Deteksi perubahan hutan</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-title">Media & Strategi Digital</div>
+            <p>Perencanaan konten · Google Analytics · SEO dasar · Manajemen platform TutorLMS/WooCommerce</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-title">Desain & Tools</div>
+            <p>Figma · CapCut · WordPress · Canva · Website content management</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-title">Kepemimpinan</div>
+            <p>Koordinasi tim · Manajemen proyek · Komunikasi lintas departemen · Supervisi intern</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PENGALAMAN -->
+<section id="pengalaman">
+  <div class="container">
+    <div class="section-eyebrow reveal">Riwayat</div>
+    <h2 class="section-title reveal">Pengalaman Kerja</h2>
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot gold"></div>
+        <div class="timeline-period">Jan 2026 – Sekarang</div>
+        <div class="timeline-role">Head of Media & Web Administrator</div>
+        <div class="timeline-org">CV Geoaccess Indonesia · Yogyakarta</div>
+        <ul class="timeline-list">
+          <li>Memimpin produksi konten end-to-end 10–15 postingan per bulan (tutorial, kuis, meme, event recap, poster promosi)</li>
+          <li>Meraih postingan viral dengan 15.000+ likes dan ~500 followers baru, dengan rata-rata jangkauan 10.000–15.000 views per postingan</li>
+          <li>Mengawasi intern desain grafis dan berkoordinasi lintas departemen</li>
+          <li>Mengelola 40+ halaman WordPress, backup data, dan konfigurasi Google Search Console + SEO</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">Jul – Des 2025</div>
+        <div class="timeline-role">Web Administrator & Design Support · Event Staff</div>
+        <div class="timeline-org">CV Geoaccess Indonesia · Yogyakarta</div>
+        <ul class="timeline-list">
+          <li>Memimpin migrasi penuh ~5.000 akun pengguna dan ~10.000 transaksi ke sistem WordPress/TutorLMS/WooCommerce</li>
+          <li>Menjadi Moderator online untuk 6 sesi pelatihan bulanan dan MC untuk 3 event pelatihan pemerintah multi-hari</li>
+          <li>Asisten tutor GIS (QGIS, ArcGIS Pro) dan Remote Sensing (GEE) untuk klien termasuk UGM dan Universitas Siliwangi</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">Apr – Jun 2025</div>
+        <div class="timeline-role">Geospatial Data Officer</div>
+        <div class="timeline-org">Yayasan PetaBencana.id</div>
+        <ul class="timeline-list">
+          <li>Memproses 100–300 catatan kejadian bencana per bulan dari relawan komunitas dan mitra organisasi</li>
+          <li>Memproduksi laporan rekap data bencana mingguan dan bulanan menggunakan Google Analytics</li>
+          <li>Melakukan pengujian platform end-to-end dan menjadi first-user untuk fitur baru</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">Apr – Mei 2025</div>
+        <div class="timeline-role">Cartographer</div>
+        <div class="timeline-org">World Resources Institute (WRI) Indonesia</div>
+        <ul class="timeline-list">
+          <li>Merancang dan melaksanakan analisis kesesuaian lahan untuk produksi kopi di Sumatera Barat (~42.000 km²)</li>
+          <li>Memproses dan mengintegrasikan 12 parameter spasial (iklim, tanah, topografi) dari berbagai sumber terpercaya</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">Jan – Mar 2025</div>
+        <div class="timeline-role">Data Contributor</div>
+        <div class="timeline-org">World Resources Institute (WRI) Indonesia</div>
+        <ul class="timeline-list">
+          <li>Menyusun dan menganalisis dataset spasial multi-sumber di Riau dan Sumatera Barat (mangrove, deforestasi, tata guna lahan)</li>
+          <li>Melakukan analisis kerentanan pesisir menggunakan modul Coastal Vulnerability Index (CVI) InVEST</li>
+          <li>Menggunakan GEE, QGIS, ArcGIS, dan InVEST untuk estimasi stok karbon dan analisis ketahanan pesisir</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PORTOFOLIO -->
+<section id="portofolio">
+  <div class="container">
+    <div class="section-eyebrow reveal">Karya</div>
+    <h2 class="section-title reveal">Portofolio Pilihan</h2>
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card reveal">
+        <img src="images/Tutorial-Tutor.png" class="portfolio-card-img" alt="Tutorial Geospasial" loading="lazy">
+        <div class="portfolio-card-header">
+          <div class="portfolio-tag">Konten Media Sosial</div>
+          <div class="portfolio-card-title">Tutorial Geospasial di Instagram</div>
+        </div>
+        <div class="portfolio-card-body">
+          <p>Seri tutorial video dan poster edukasi GIS & Remote Sensing untuk akun Geoaccess Indonesia (48K+ followers) — mulai dari cara unduh data REST Service hingga otomasi layout peta di QGIS.</p>
+          <div class="portfolio-tools">
+            <span class="tool-tag">CapCut</span>
+            <span class="tool-tag">Figma</span>
+            <span class="tool-tag">Copywriting</span>
+            <span class="tool-tag">QGIS</span>
+          </div>
+        </div>
+        <div class="portfolio-card-footer">
+          <a href="https://www.instagram.com/p/DZr0ECXRIc7/" target="_blank" class="portfolio-link">↗ Tutorial #1</a>
+          <a href="https://www.instagram.com/p/DYhAQ_cxA8B/" target="_blank" class="portfolio-link">↗ Tutorial #2</a>
+          <a href="https://www.instagram.com/p/DV8NM_ukb54/" target="_blank" class="portfolio-link">↗ Tutorial #3</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <img src="images/meme.png" class="portfolio-card-img" alt="Meme Geospasial" loading="lazy">
+        <div class="portfolio-card-header">
+          <div class="portfolio-tag">Konten Viral</div>
+          <div class="portfolio-card-title">Meme Geospasial — 15.000+ Likes</div>
+        </div>
+        <div class="portfolio-card-body">
+          <p>Kampanye meme geospasial yang berhasil menembus 15.000+ likes organik dan mendatangkan ~500 followers baru dalam satu postingan — membuktikan pendekatan humor teknis dapat meningkatkan jangkauan secara signifikan.</p>
+          <div class="portfolio-tools">
+            <span class="tool-tag">Content Strategy</span>
+            <span class="tool-tag">Graphic Design</span>
+            <span class="tool-tag">Instagram</span>
+          </div>
+        </div>
+        <div class="portfolio-card-footer">
+          <a href="https://www.instagram.com/p/DYCPOVeERAq/?img_index=1" target="_blank" class="portfolio-link">↗ Lihat Postingan</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <img src="images/meme2.png" class="portfolio-card-img" alt="Peta Kesesuaian Lahan" loading="lazy">
+        <div class="portfolio-card-header">
+          <div class="portfolio-tag">Analisis Spasial</div>
+          <div class="portfolio-card-title">Kesesuaian Lahan Kopi — Sumatera Barat</div>
+        </div>
+        <div class="portfolio-card-body">
+          <p>Analisis kesesuaian lahan produksi kopi seluas ~42.000 km² menggunakan metode overlay multi-kriteria dengan 12 parameter spasial, sebagai deliverable untuk WRI Indonesia.</p>
+          <div class="portfolio-tools">
+            <span class="tool-tag">QGIS</span>
+            <span class="tool-tag">ArcGIS</span>
+            <span class="tool-tag">Spatial Analysis</span>
+          </div>
+        </div>
+        <div class="portfolio-card-footer">
+          <a href="https://drive.google.com/drive/folders/1ZbARJrUBI6Ydb68a6XcH1omJkdyV4yyY?usp=drive_link" target="_blank" class="portfolio-link">↗ Lihat Peta</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <div class="portfolio-card-img-placeholder"><span>🗄️</span><p>Migrasi Sistem</p></div>
+        <div class="portfolio-card-header">
+          <div class="portfolio-tag">Migrasi Sistem</div>
+          <div class="portfolio-card-title">Migrasi 5.000+ Akun ke WordPress</div>
+        </div>
+        <div class="portfolio-card-body">
+          <p>Memimpin migrasi penuh ~5.000 akun pengguna dan ~10.000 transaksi dari Mayar ke sistem WordPress/TutorLMS/WooCommerce, memastikan integritas data secara menyeluruh.</p>
+          <div class="portfolio-tools">
+            <span class="tool-tag">WordPress</span>
+            <span class="tool-tag">TutorLMS</span>
+            <span class="tool-tag">WooCommerce</span>
+            <span class="tool-tag">Data Migration</span>
+          </div>
+        </div>
+        <div class="portfolio-card-footer">
+          <a class="portfolio-link placeholder">⏳ Link segera hadir</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <img src="images/WRI-Project.png" class="portfolio-card-img" alt="Analisis HGU Sumatera Barat" loading="lazy">
+        <div class="portfolio-card-header">
+          <div class="portfolio-tag">Analisis Lingkungan</div>
+          <div class="portfolio-card-title">WRI Indonesia - Kerentanan Pesisir & Stok Karbon</div>
+        </div>
+        <div class="portfolio-card-body">
+          <p>Analisis kerentanan pesisir menggunakan modul CVI InVEST di Riau dan Sumatera Barat, dikombinasikan dengan estimasi stok karbon mangrove menggunakan Google Earth Engine.</p>
+          <div class="portfolio-tools">
+            <span class="tool-tag">InVEST</span>
+            <span class="tool-tag">Google Earth Engine</span>
+            <span class="tool-tag">QGIS</span>
+            <span class="tool-tag">ArcGIS</span>
+          </div>
+        </div>
+        <div class="portfolio-card-footer">
+          <a href="https://drive.google.com/file/d/1SPvujjsb7gRMQZ30DyI9WPtRDWja0FBY/view" target="_blank" class="portfolio-link">↗ Lihat Laporan Analisis</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <img src="images/kuis.png" class="portfolio-card-img" alt="Kuis GIS" loading="lazy">
+        <div class="portfolio-card-header">
+          <div class="portfolio-tag">Konten Interaktif</div>
+          <div class="portfolio-card-title">Kuis Kartografi & Remote Sensing</div>
+        </div>
+        <div class="portfolio-card-body">
+          <p>Konten kuis interaktif bertema GIS dan Remote Sensing untuk meningkatkan engagement audiens — mulai dari soal koordinat QGIS hingga identifikasi kombinasi band Sentinel-2.</p>
+          <div class="portfolio-tools">
+            <span class="tool-tag">Figma</span>
+            <span class="tool-tag">Copywriting</span>
+            <span class="tool-tag">Instagram</span>
+          </div>
+        </div>
+        <div class="portfolio-card-footer">
+          <a href="https://www.instagram.com/p/DZXF7ZhxGdn/" target="_blank" class="portfolio-link">↗ Kuis #1</a>
+          <a href="https://www.instagram.com/p/DX6GnTtRPF6/" target="_blank" class="portfolio-link">↗ Kuis #2</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <img src="images/Pelatihan Teknis - ArcGIS Pro 4.png" class="portfolio-card-img" alt="Sertifikat Pelatihan" loading="lazy">
+        <div class="portfolio-card-header">
+          <div class="portfolio-tag">Desain & Administrasi</div>
+          <div class="portfolio-card-title">Materi Pelatihan & Sertifikat</div>
+        </div>
+        <div class="portfolio-card-body">
+          <p>Merancang modul pelatihan, poster promosi, dan sertifikat resmi untuk program pelatihan GIS dan Remote Sensing Geoaccess Indonesia — termasuk bootcamp Google Earth Engine multi-sesi.</p>
+          <div class="portfolio-tools">
+            <span class="tool-tag">Figma</span>
+            <span class="tool-tag">PowerPoint</span>
+            <span class="tool-tag">Visual Design</span>
+          </div>
+        </div>
+        <div class="portfolio-card-footer">
+          <a class="portfolio-link placeholder">⏳ Link segera hadir</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PENDIDIKAN & SERTIFIKASI -->
+<section id="pendidikan" style="background: var(--off-white);">
+  <div class="container">
+    <div class="section-eyebrow reveal">Latar Belakang</div>
+    <h2 class="section-title reveal">Pendidikan & Sertifikasi</h2>
+    <div class="about-grid">
+      <div class="reveal">
+        <div style="background: var(--white); border: 1px solid var(--border); padding: 2rem; border-radius: 2px; border-top: 3px solid var(--blue-accent);">
+          <div style="font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-accent); font-weight: 600; margin-bottom: 0.5rem;">Agu 2020 – Sep 2024</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy-dark); margin-bottom: 0.3rem;">S1 Teknik Geodesi</div>
+          <div style="font-size: 0.85rem; color: var(--gray-text); margin-bottom: 1.2rem;">Universitas Diponegoro, Fakultas Teknik</div>
+          <div style="display: flex; align-items: baseline; gap: 0.4rem;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy-dark);">3.64</span>
+            <span style="font-size: 0.8rem; color: var(--gray-text);">/ 4.00 IPK</span>
+          </div>
+        </div>
+        <div style="margin-top: 1.5rem; background: var(--white); border: 1px solid var(--border); padding: 1.5rem; border-radius: 2px;">
+          <div style="font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.8rem;">Penghargaan</div>
+          <div style="font-size: 0.88rem; color: var(--navy-dark); font-weight: 500;">Juara 2 GIS Competition 2023</div>
+          <div style="font-size: 0.78rem; color: var(--gray-text); margin-top: 0.2rem;"><strong> Geografi, UGM</strong> · Utilizing Big Spatial Data and Geo Al-Based GIS for Detecting Central Business Districts Impact on Digital Carbon Emissions in Java-Bali</div>
+        </div>
+        <div style="margin-top: 1.5rem; background: var(--white); border: 1px solid var(--border); padding: 1.5rem; border-radius: 2px;">
+          <div style="font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.8rem;">Penghargaan</div>
+          <div style="font-size: 0.88rem; color: var(--navy-dark); font-weight: 500;">Best Local Hero Delegate</div>
+          <div style="font-size: 0.78rem; color: var(--gray-text); margin-top: 0.2rem;"><strong>AIESEC</strong> — Local Project of Reform #12 · Workshop SDG #12 untuk Ibu PKK Semarang (Jul 2023)</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="section-eyebrow" style="margin-bottom: 1rem;">Sertifikasi</div>
+        <div class="cert-grid">
+          <div class="cert-item">
+            <div class="cert-year">2024</div>
+            <div>
+              <div class="cert-name">Remote Pilot Certification</div>
+              <div class="cert-issuer">DKPPU, Kementerian Perhubungan</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-year">2024</div>
+            <div>
+              <div class="cert-name">TOEFL ITP: 560</div>
+              <div class="cert-issuer">Universitas Diponegoro – SEU</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-year">2024</div>
+            <div>
+              <div class="cert-name">Data Science & AI Program</div>
+              <div class="cert-issuer">Independent Study, Kemendikti</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-year">2022</div>
+            <div>
+              <div class="cert-name">Bootcamp Google Earth Engine</div>
+              <div class="cert-issuer">Geocourse</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="section-eyebrow reveal">Hubungi Saya</div>
+        <h2 class="section-title reveal">Mari Berkolaborasi</h2>
+        <p class="reveal" style="color: #3D4F63; font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; font-weight: 300;">
+          Saya terbuka untuk peluang kerja, kolaborasi proyek geospasial, maupun konsultasi strategi media digital. Jangan ragu untuk menghubungi saya!
+        </p>
+      </div>
+      <div class="contact-links reveal">
+        <a href="mailto:work.sekardewi@gmail.com" class="contact-link">
+          <div class="contact-link-icon">✉</div>
+          <div>
+            <div class="contact-link-text">work.sekardewi@gmail.com</div>
+            <div class="contact-link-sub">Email</div>
+          </div>
+        </a>
+        <a href="tel:+6282146307285" class="contact-link">
+          <div class="contact-link-icon">☎</div>
+          <div>
+            <div class="contact-link-text">+62 821 4630 7285</div>
+            <div class="contact-link-sub">WhatsApp / Telepon</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/sekar-arum-kd" target="_blank" class="contact-link">
+          <div class="contact-link-icon" style="font-weight: 700; font-size: 0.75rem;">in</div>
+          <div>
+            <div class="contact-link-text">LinkedIn</div>
+            <div class="contact-link-sub">Profil Profesional</div>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/geoaccess" target="_blank" class="contact-link">
+          <div class="contact-link-icon" style="font-size: 1rem;">◎</div>
+          <div>
+            <div class="contact-link-text">@geoaccess</div>
+            <div class="contact-link-sub">Portofolio Media Sosial</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Sekar Arum Kusuma Dewi</div>
+  <div class="footer-coords">◎ 7°47'S, 110°22'E · Yogyakarta · 2026</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
